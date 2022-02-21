@@ -1,0 +1,1238 @@
+/*________________________________index.html________________________________*/
+
+html, body{
+  margin: 0; 
+  padding: 0;
+  font-family: Comic Sans MS;
+  
+  overflow-x: hidden;			/*serve a togliere i bordi bianchi nella visualizzazione su dispositivo*/
+}
+
+/* -------------------------------NAVBAR------------------------------------*/
+
+.navbar{
+  background-color: #6D7B8D;
+  overflow: hidden;
+  position: fixed;
+  opacity: 0.5;
+  width: 100%;
+  padding: 0;
+  top: 0;
+  display: block;
+  z-index: 2;                 /*2 altrimenti slide 2 non mi permette di usarla*/
+}
+
+
+.navbar a{
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5% 3%;
+  /*vm -> grandezza testo che si adatta alla grandezza della pagina*/
+  font-size: 2vw;
+  height: 32px;
+
+  /*allineamento verticale al centro*/
+  align-items: center;
+  display: flex;
+}
+
+.navbar:hover{
+  opacity: 1;
+}
+
+.navbar a:hover{
+  background-color: white;
+  color: #6D7B8D;
+}
+
+.navbar .nav_sx{
+  float: right;
+}
+
+.navbar .icona{
+  display: none;
+}
+
+.logo{
+  font-family: Segoe Script !important;
+}
+
+/* Quando lo schermo e' più piccolo di 600 pixels, nascondo tutti i link, tranne il primo. 
+Mostra il link che dovrebbe aprire e chiudere il menu*/
+@media only screen and (max-width: 600px){
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+
+  .navbar a.icona{
+    float: right;
+    display: block;
+  }
+
+  .navbar a{
+    font-size: 3vw;
+  }
+}
+
+/* La classe "responsive" e' aggiuna a .navbar in JavaScript quando l'utente clicca l'icona. 
+Questa classe quando lo schermo e' inferiore di 600 px mostra i link del menu verticalmente*/
+@media only screen and (max-width: 600px){
+  .navbar.responsive{
+    position: relative;
+  }
+  .navbar.responsive a.icona{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a{
+    float: none;
+    /*display: block;*/
+    text-align: left;
+    height: 32px;
+    align-items: center;
+    display: flex;
+  }
+}
+
+/* -------------------------------SLIDE_1------------------------------------*/
+body, main, html{
+    margin:0; 
+    height: 100%; 
+}
+
+.immagine{
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+
+    float: left;             /*per attaccare le immagini*/
+}
+
+#immagine1{
+    background-image: url(../img/slide1.jpg);
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+#c_slide1{
+    position: relative;
+    top: 70%;
+    padding: 10px;
+    color: #fff;
+    font-size: 6vw;
+    letter-spacing: 10px;
+    height: 5%;
+    font-family: Segoe Script;
+
+    display: flex;
+    align-items: center;      /*allineamento verticale*/
+    justify-content: center;  /*allineamento orizzontale*/
+}
+
+@media only screen and (max-width: 768px){
+    #immagine1{
+        min-height: 420px;
+        max-height: 420px;
+    }
+}
+
+/*-------------------------------SLIDE_2------------------------------------*/
+
+#immagine2{
+    background-image: url(../img/slide2.jpg);
+    min-height: 500px;
+    height: 100%;  
+    margin: auto; 
+} 
+
+#c_slide2{
+    position: relative;
+    top: 25%;
+    background-color: #111;
+    padding: 18px;
+    color: #fff;
+    font-size: 2vw;
+    letter-spacing: 10px;
+    height: 55%;
+    opacity: 0.5;
+    width: 80%;
+    font-family: Impact;
+
+
+    display: flex;
+    align-items: center;      /*allineamento verticale testo*/
+    justify-content: center;  /*allineamento orizzontale testo*/
+
+    margin: auto;             /*allineamento div orizzontale*/
+
+    flex-flow: row wrap;      /*manda a capo il cite*/
+
+}
+
+#c_slide2:last-child{
+    justify-content: flex-end;  /*manda a destra il cite*/
+}
+
+@media only screen and (max-width: 768px){
+    #immagine2{
+        min-height: 420px;
+        max-height: 420px;
+    }
+
+    #c_slide2{
+        font-size: 2.5vw;
+
+    }
+}
+
+/*-------------------------------SLIDE_3------------------------------------*/
+
+/*NON CREDO SERVA clear:left; rimuove il float della slide precedente*/
+
+.c_slide3{
+    display: inline-block;
+    width: 18%;
+    padding: 10px 10px;
+}
+
+
+#slide3_1{
+    clear:left;
+    color: white;
+    text-align: center;
+    background-color: #414042;
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+#forbici{
+    width: 40%;
+}
+
+#rasoioelt{
+    width: 33%;
+}
+
+#barba{
+    width: 48%;
+}
+
+#rasoio{
+    width: 63%;
+}
+
+#colore{
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px){
+    .c_slide3{
+        width: 80%;
+        padding-top: 10%;
+    }
+
+    #slide3_1{
+        margin-top: 0%;
+        color: white;
+    }
+
+    #forbici{
+        width: 23%;
+    }
+
+    #rasoioelt{
+        width: 18%;
+    }
+
+    #barba{
+        width: 25%;
+    }
+
+    #rasoio{
+        width: 30%;
+    }
+
+    #colore{
+        width: 30%;
+    }
+}
+
+/*-------------------------------SLIDE_4------------------------------------*/
+
+#immagine4{
+    /*background-image: url(../img/slide3.jpg);*/
+    height: 140%;
+    margin: auto;
+    min-height: 1000px;
+    /*float: left;*/
+    background-image: url(../img/slide5.jpg);
+    
+    /*background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.4)), url(../img/slide3.jpg);
+    /*serve per eseguire sfumature di colori secondo una certa direzione (default da sotto a sopra); sintassi:
+    linear-gradient(direzione_cambio_colore, color1, colore2, ...);*/
+}
+
+.c_slide4{
+    display: inline-block;
+    width: 370px;
+    /*width: 30%;*/
+    padding: 10px 10px;
+    box-shadow: 4px  4px 16px rgba(255,255,255,0.8);
+    transition: 0.5s;
+    vertical-align: top;
+    margin: 0.5%;
+}
+
+.c_slide4:hover{
+    box-shadow: 20px 20px 25px 0 rgba(255,255,255,1);
+    background-color: #414042;
+    color: white;
+}
+
+#slide4_1{
+    text-align: center;
+    vertical-align: middle;
+}
+
+ .intestazione{
+    font-size: 3vw;
+}
+
+#barbers{
+    width: 50%;
+}
+
+.avatar{
+    padding-top: 30px;
+}
+
+@media only screen and (max-width: 1233px){
+    #immagine4{
+      min-height: 1380px;
+    }
+}
+
+@media only screen and (max-width: 850px){ /*visualizzazione 2-2-1*/
+    #immagine4{
+        min-height: 1450px;
+    }
+
+    .c_slide4{
+        width: 290px;
+    }
+
+    .intestazione{
+        font-size: 3.5vw;
+    }
+}  
+
+@media only screen and (max-width: 837px){ /*visualizzazione 1x5*/
+    #immagine4{
+        min-height: 2250px;
+    }
+
+    .c_slide4{
+        width: 290px;
+        margin-top: 15px;
+    }
+
+    .intestazione{
+        font-size: 30px;
+    }
+
+}
+
+/*-------------------------------SLIDE_5------------------------------------*/
+
+#slide5_1{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    clear:left;
+    background-color: #414042;
+    color: white;
+    text-align: center;
+}
+
+/*-------------------------------FORM DI LOGIN------------------------------------*/
+
+/* modulo login (background) */
+.modulo{
+  display: none; /* nascosto di default */
+  position: fixed; /* fisso dove viene cliccato login */
+  z-index: 3; /* sopra il resto della pagina */
+  left: 0;
+  top: 0;
+  width: 100%; /* tutta la pagina in background (larghezza) */
+  height: 100%; /* tutta la pagina in background (lunghezza) */
+  overflow: auto; /* abilita lo scroll se necessario */
+  background-color: rgba(0,0,0,0.5); /* rendo background sfocato */
+  padding-top: 60px;
+  color: white;
+}
+
+/* contenuto modulo login */
+.modulo_contenuto{
+  background-color: #414042;
+  margin: 5% auto 15% auto; /* 5% dal sopra, 15% dal sotto e centrato */
+  border: 1px solid #888;
+  width: 80%; /* può essere anche meno, dipende dalla dimensione dello schermo */
+  text-align: center;
+}
+
+/* La x per chiudere il modulo di login */
+.chiudi_login{
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.chiudi_login:hover,
+.chiudi_login:focus{
+  color: red;
+  cursor: pointer;
+}
+
+/* Animazione zoom all'apertura dell modulo di login
+   animation specifica qunto far durare l'animazione nel nostro caso abbiamo:
+   fai partire l'animazione zoom e falla durare 1 secondo */
+.animazione{
+  animation: zoom 1.5s
+}
+ 
+/*zoom è il nome dell'animazione scelto da me per quando premo su 'login'*/
+@keyframes zoom{
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+.lb_login{
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  margin: auto;
+}
+
+.ins_dati{
+  padding: 12px 20px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.bottone{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  border: groove;
+  cursor: pointer;
+  width: 20%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.bottone:hover{
+  opacity: 0.8;
+}
+
+/* centra l'immagine e la posizione della x */
+.contenitore_img{
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.contenitore{
+  padding: 16px;
+}
+
+span.password{
+  display: block;
+  width: 100%;
+}
+
+.errore_imm_dati{
+  color: red;
+}
+
+#usr_login{
+  filter:invert(100%);
+  width: 30%;
+}
+
+@media screen and (max-width: 300px){
+  span.contenitore{
+     display: block;
+     float: none;
+  }
+}
+@media screen and (max-width: 485px){
+  .bottone{
+     width: auto;
+  }
+}
+
+/*________________________________registrazione________________________________*/
+
+/*-----------------------------FORM DI REGISTRAZIONE--------------------------------*/
+
+.background{
+  background-color: #414042;
+  padding-top: 10px;
+}
+
+#registrazione{
+  margin-top: 1.5%;
+  padding-bottom: 5%;
+  color: white;
+  text-align: center;
+}
+
+#immagine_reg{
+  width: 30%;
+  filter:invert(100%);
+}
+
+/*.inserisci{
+  padding: 12px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+}*/
+
+.etichetta{
+  width: 100%;
+  display: block;
+  font-weight: bold;
+}
+
+.elemento{
+  width: 45%;
+  text-align: center;
+  display: inline-block;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+}
+
+.stile_testo{
+  /*font-size: 1.5vw;*/
+  font-size: 20px;
+}
+
+.sfondo_alert{
+  background-color: red;
+}
+
+.larghezza_paragrafo{
+  width: 80%;
+  margin: auto;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+#ins_immagine{
+  width: 70%;
+  margin: auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.rimuovi_immagine{
+  color: white;
+  font-size: 24px;
+}
+
+.rimuovi_immagine:hover{
+  color: red;
+}
+
+/*________________________________pagina_personale_utente________________________________*/
+
+#margin_img{
+  margin: 50px 0 12px 0; 
+}
+
+.immagine_pp{
+  width: 27%;
+  filter:invert(100%);
+}
+
+.prenotazione{
+  margin-top: 1.5%;
+  padding-bottom: 5%;
+  color: white;
+  text-align: center;
+}
+
+.appuntamenti{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 68%;
+  margin: auto;
+}
+
+/*
+.contenitore_tabella{
+  overflow-x:auto;
+}
+*/
+
+
+/*th, td*/
+
+.col_appuntamenti{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/*tr*/
+.riga_appuntamenti:hover:not(:first-child) {
+  background-color: white;
+  color: #414042;
+}
+
+/*th*/
+.grand_colonna{width: 25%}
+
+.annulla{
+  cursor: pointer;
+  top: 50%;
+  right: 0%;
+  padding: 12px 16px;
+  transform: translate(0%, -50%);
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.precedente{
+  float: left;  
+  margin: 0px;
+  display: inline;
+  width: 26px;
+  height: 26px;
+  background: url('./../img/freccia.png');
+  background-size: cover;
+  border: none;
+  opacity: 1;
+  outline: none;
+  cursor: pointer;
+  transform: rotate(180deg);
+  filter: invert(100%);
+}
+
+.precedente:disabled{
+  filter: opacity(0%);
+  background-size: cover;
+  cursor: auto;
+}
+
+.successivo{
+  float: right;
+  margin: 0px;
+  display: inline;
+  width: 26px;
+  height: 26px;
+  background: url('./../img/freccia.png');
+  background-size: cover;
+  border: none;
+  opacity: 1;
+  outline: none;
+  cursor: pointer;
+  filter: invert(100%);
+}
+
+.successivo:disabled{
+  filter: opacity(0%);
+  background-size: cover; 
+  cursor: auto;
+}
+
+.elementi_navigazione{
+  margin-top: 20px;
+  font-size: 16px;
+  width: 70%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.annulla_appuntamento{
+  cursor: pointer;
+  top: 50%;
+  right: 0%;
+  padding: 12px 16px;
+  transform: translate(0%, -50%);
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert {
+  padding: 10px;
+  text-align: left;
+  display: none;
+}
+
+.testo_alert{
+  display: inline;
+  color: white;
+}
+
+.chiudi_alert {
+  display: inline;
+  float: right;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.titolo_conferma{
+  display: inline;
+}
+
+.chiudi_conferma{
+    display: inline;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.chiudi_conferma:hover,
+.chiudi_conferma:focus{
+  color: red;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 412px){
+  .col_appuntamenti{
+    font-size: 10px;
+  }
+
+  .elementi_navigazione{
+    font-size: 10px;
+  }
+
+  .successivo{
+    width: 20px;
+    height: 20px;
+  }
+
+  .precedente{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/*________________________________pagina_personale_barber________________________________*/
+
+/*da sistemare*/
+.contenitore_img2{
+  text-align: center;
+  position: relative;
+  color: white !important;
+}
+
+.appuntamenti_barber{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  margin: auto;
+}/*58*/
+
+.cronologia_barber{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50%;
+  margin: auto;
+}
+
+.fatto_annulla{width: 2%;}
+
+.spunta_fatto{
+  cursor: pointer;
+  top: 50%;
+  right: 0%;
+  padding: 12px 16px;
+  transform: translate(0%, -50%);
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+.no_punto {list-style-type: none;}
+
+.mese{
+  padding: 30px 0px 30px 0px;
+  width: 100%;
+  background: #32378C;
+  color:white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mese ul{
+  margin: 0;
+  padding: 0;
+}
+
+.mese ul li{
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.anno{
+  font-size:18px;
+}
+
+#calendario{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: auto;
+}
+
+.giorni_settimana{
+  padding: 8px;
+  text-align: center;
+  color: #666;
+  background-color: #ddd;
+}
+
+.giorni{
+  padding: 8px;
+  text-align: center;
+  color: #666;
+  background: #eee;
+  color: #777;
+}
+
+.active{
+  padding: 5px;
+  background: red;
+  color: white;
+}
+
+#scritta_logo{
+  font-size: 27px !important;
+}
+
+.libero{
+  padding: 5px;
+  background: green;
+  color: white;
+}
+
+/*_______________________________________profilo_utente_____________________________________*/
+
+.immagine_profilo{
+  width: auto;
+  height: 100%;
+  /*margin-left: -50px;*/
+}
+
+.contenitore_ip{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+  /*18,10*/
+}
+
+.allineamento_profilo{
+  display: inline-block; 
+  vertical-align: middle;
+}
+
+.saluto{
+  margin: 55px 0 12px 0;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.profilo{
+  width: 43%;
+  text-align: center;
+}
+
+#info_profilo{
+  text-align: center;
+}
+
+.info{
+  width: 45%;
+  text-align: center;
+  margin: 1%;
+  color: white;
+}
+
+.contenitore_profilo{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+.c_slide3_contatore{
+    display: inline-block;
+    width: 15%;
+    padding: 10px 10px;
+}
+
+#c_slide3_1_contatore{
+  text-align: center;
+  color: white;
+  font-size: 20px; 
+  font-family: Segoe Script;
+}
+
+#forbici_contatore{
+    width: 31%;
+}
+
+#rasoioelt_contatore{
+    width: 25%;
+}
+
+#barba_contatore{
+    width: 38%;
+}
+
+#rasoio_contatore{
+    width: 50%;
+}
+
+#colore_contatore{
+    width: 39%;
+}
+
+.cambia{
+  color: #ABCDEF;
+}
+
+.cambia:hover{
+  opacity: 0.6;
+  text-decoration: underline;
+}
+
+.finestra_cambio_psw{
+  background-color: #AAAAAA;
+  display: none;
+  text-align: justify;
+}
+
+.elemento_cambio{
+  width: 45%;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 1%;
+}
+
+.cambia_psw{
+  background-color: blue;
+  padding: 4px 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  border-radius: 25px;
+  width: 43%;
+} 
+
+.allineamento_bottone{
+  width: 40%;
+  text-align: right;
+}
+
+@media screen and (max-width: 661px){
+  .profilo{
+    width: 90%;
+    text-align: center;
+    margin: 3%;
+  }
+
+  .contenitore_profilo{
+    text-align: center;
+  }
+
+  #forbici_contatore{
+    width: 12%;
+  }
+
+  #rasoioelt_contatore{
+    width: 10%;
+  }
+
+  #barba_contatore{
+    width: 16%;
+  }
+
+  #rasoio_contatore{
+    width: 20%;
+  }
+
+  #colore_contatore{
+    width: 15%;
+  }
+
+  .c_slide3_contatore{
+    display: inline-block;
+    width: 80%;
+    padding: 0;
+  }
+}
+
+/*_______________________________________gestione_utenti_____________________________________*/
+
+.col_dashboard{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.riga_dashboard:hover:not(:first-child) {
+  background-color: white;
+  color: #414042;
+}
+
+.tabella_dashboard{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  margin: auto;
+  color: white;
+}
+
+.ins_barber{
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 80%;
+}
+
+#conferma_barber{
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  color: green;
+  font-weight: bold;
+  width: 80%;
+}
+
+.amministrazione{
+  text-align: center;
+  color: white;
+}
+
+.attiva{
+  text-decoration: underline;
+  cursor: pointer;
+  color: green;
+  border-bottom: 1px solid #ccc;
+}
+
+.disattiva{
+  text-decoration: underline;
+  cursor: pointer;
+  color: red;
+  border-bottom: 1px solid #ccc;
+}
+
+#contenitore_utenti{
+  padding-bottom: 5%;
+}
+
+@media screen and (max-width: 412px){
+  .col_dashboard{
+    font-size: 10px;
+  }
+}
+
+/*_______________________________________piano_ferie.php_____________________________________*/
+
+.col_ferie{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.riga_ferie:hover:not(:first-child) {
+  background-color: white;
+  color: #414042;
+}
+
+.tabella_ferie{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  margin: auto;
+  color: white;
+}
+
+.alert_no_imm{
+  margin-top: 5%;
+}
+
+.ferie{
+  text-align: center;
+  color: white;
+}
+
+.elimina{
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+#inserimento{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 54%;
+  margin: auto;
+  color: white;
+}
+
+.ins_ferie{
+  padding: 12px 20px;
+  display: block;
+  /*margin-right: auto;
+  margin-left: auto;*/
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.conferma_richiesta{
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: green;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#richiedi{
+  text-align: center;
+}
+
+#ultimo_elemento_piano{
+  padding-bottom: 5%; 
+}
+
+@media screen and (max-width: 412px){
+  /*.col_personale{
+    font-size: 10px;
+  }*/
+  .col_ferie{
+    font-size: 10px;
+  }
+
+  .alert_no_imm{
+    margin-top: 8%;
+  }
+
+}
+
+/*_______________________________________richiesta_ferie.php_____________________________________*/
+
+.scelta_visuale{
+  display: inline;
+  cursor: pointer;
+}
+
+.selezionato{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.non_selezionato{
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.pulsantiera{
+  display: inline;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.colonna_richieste{width: 16.6%}
+
+.grand_colonna5{width: 20%}
+
+#intestazione_scelta{
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 412px){
+
+  .intestazione_scelta{
+    margin-top: 8%;
+  }
+
+}
+
+/*_______________________________________manuale_utente.html_____________________________________*/
+
+#manuale{
+  margin-top: 5.5%;
+  color: white;
+  text-align: justify;
+  font-size: 18px;
+  padding-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}

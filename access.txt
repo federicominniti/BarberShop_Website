@@ -1,0 +1,17 @@
+BARBER
+1
+	a.cini 
+	4L3SS10!
+
+2
+	f.rini
+	F4B10!!!
+	
+3	ADMIN
+	m.pini
+	M4RC0!!!
+	
+CLIENTE
+1
+	pippo30
+	Aaaaaaa3

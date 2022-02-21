@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Barber</title>
+    <link rel="stylesheet" href="./css/index1.css" media="screen">
+    <script src="./js/effects.js"></script>
+    <!-- PER LA VISUALIZZAZIONE DEVICES DI CHROME -->
+    <meta name="viewport" content="width=device-width">  
+</head>
+<body class = "background">
+    <main>
+        <nav>
+            <div class="navbar" id="myNavbar">
+                <a href="./index.php" class="logo">Barbershop</a>
+                <a href="./manuale_utente.html">Manuale</a>
+                <a href="./php/registrazione1.php" class="nav_sx">Registrati</a>
+                <a href="javascript:void(0);" class="icona" onclick="Hamburger()">
+                    <img src="img/hamburger_icon.svg" alt="hamburger icon"></img>
+                </a>
+            </div>  
+        </nav>
+
+        <section id="manuale">
+            <h1 class = "intestazione">Manuale utente</h1>
+            <p>Il servizio offerto consiste in una piattaforma di un barbiere, per la prenotazione di appuntamenti. Gli utenti possono essere di 3 tipologie: amministratore (barber che gestisce il negozio), 'barber' e clienti.</p>
+            <p>I clienti possono registrarsi sul sito inserendo i propri dati personali e una immagine del profilo, ed una volta fatto possono effettuare il login per prenotare/disdire un appuntamento scegliendo il barber che preferiscono. In base al barber scelto ed al giorno scelto verranno mostrati gli orari disponibili in cui possono essere prenotati gli appuntamenti. Se il barber non ha programmato delle ferie verrà creato un nuovo appuntamento e visualizzano nella sezione 'Prossimi appuntamenti'. Il cliente ha poi una sezione con la cronologia dei suoi appuntamenti e dalla sua pagina personale modificare la password e visualizzare il numero di appuntamenti per tipo di servizio che ha fatto.</p>
+            <p>I barber possono visualizzare gli appuntamenti che i clienti hanno prenotato con loro e segnarli come fatti. Possono poi effettuare il piano ferie (che gli dovrà successivamente essere assegnato dall'utente amministratore) specificando data inizio e data fine e visualizzando le richieste effettuate (che possono eventualmente cancellare), le richieste accettate (durante il quale i clienti non potranno effettuare prenotazioni per un appuntamento con il barber in questione che ha effettuato la richiesta di ferie) e quelle rifiutate.</p>
+            <p>L'Utente amministratore lavora anche lui come barber ricevendo appuntamenti, ma effettua anche una gestione degli utenti: crea e attiva/disattiva gli account dei barber e eventualmente disattiva gli account degli utenti. Infine accetta o rifiuta le richieste di ferie effettuate dai barber.</p>
+        </section>
+    </main>
+</body>
+</html>
+
+<!-- Warning:
+        - Il lang è presente --> 
