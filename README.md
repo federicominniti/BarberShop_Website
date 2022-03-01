@@ -10,7 +10,7 @@ Barber can accept/reject appointments, send to the admin a request of an holiday
 
 Admin can do all operation of a common barber but also create new barber's account, disable barber's/user's accounts, accept/reject requests of barbers' holidays.
 
-All users can also modify his/her credentials.
+All users can also modify their credentials.
 
 Barbershop website is created from scratch created using HTML5, CSS3, Javascript, PHP & AJAX.
 
