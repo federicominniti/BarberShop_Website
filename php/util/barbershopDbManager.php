@@ -1,9 +1,9 @@
 <?php  
 	
-	require_once __DIR__ . "/../config.php";
-    require DIR_UTIL . "dbConfig.php"; 
+    	require_once __DIR__ . "/../config.php";
+    	require DIR_UTIL . "dbConfig.php"; 
 
-    $barbershop_db = new Barbershop(); 
+    	$barbershop_db = new Barbershop(); 
 
 	class Barbershop {
 		private $mysqli_connection = null;
