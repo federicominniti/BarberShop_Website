@@ -267,14 +267,14 @@ DashboardUtente.creaPopupConferma =
 		var testo = document.createElement("p");
 		testo.setAttribute("class", "");		
 		testo.textContent = "Confermi l'appuntamento del " + data + " con il nostro barber " + barber + 
-								" alle " + orario + " per un " + servizio + "?";	
+					" alle " + orario + " per un " + servizio + "?";	
 
 		var bottone = document.createElement("button");
 		bottone.setAttribute("type", "submit");	
 		bottone.setAttribute("class", "bottone");
 		
 		bottone.setAttribute("onclick", "utenteGestoreEventi.prenotaAppuntamento('" + data + "', '" + 
-											barber + "', '" + orario + "', '" + servizio + "')");
+					barber + "', '" + orario + "', '" + servizio + "')");
 		bottone.textContent = 'VAI';	
 
 		contenitore.appendChild(titolo);
