@@ -21,8 +21,8 @@ barberGestoreEventi.fatto =
 		var responseFunction = barberGestoreEventi.onAjaxResponse;
 	
 		AjaxManager.eseguiAjaxRequest(barberGestoreEventi.DEFAULT_METHOD, 
-										url, barberGestoreEventi.ASYNC_TYPE, 
-										null, responseFunction);
+						url, barberGestoreEventi.ASYNC_TYPE, 
+						null, responseFunction);
 	}
 
 //Caricamento del piano ferie in seguito all'apertura della sezione dedicata
@@ -33,8 +33,8 @@ barberGestoreEventi.CaricaFerie =
 		var responseFunction = barberGestoreEventi.onAjaxResponseOperazioneFerie;
 	
 		AjaxManager.eseguiAjaxRequest(barberGestoreEventi.DEFAULT_METHOD, 
-										url, barberGestoreEventi.ASYNC_TYPE, 
-										null, responseFunction);
+						url, barberGestoreEventi.ASYNC_TYPE, 
+						null, responseFunction);
 	}
 
 //Eliminazione di una richiesta di ferie eseguita da parte di un barber ma non ancora accettata
@@ -45,8 +45,8 @@ barberGestoreEventi.eliminaRichiesta =
 		var responseFunction = barberGestoreEventi.onAjaxResponseOperazioneFerie;
 	
 		AjaxManager.eseguiAjaxRequest(barberGestoreEventi.DEFAULT_METHOD, 
-										url, barberGestoreEventi.ASYNC_TYPE, 
-										null, responseFunction);
+						url, barberGestoreEventi.ASYNC_TYPE, 
+						null, responseFunction);
 	}
 
 //Creazione richiesta di ferie da far approvare all'admin/direttore
@@ -63,8 +63,8 @@ barberGestoreEventi.richiediFerie =
 		var responseFunction = barberGestoreEventi.onAjaxResponseOperazioneFerie;
 	
 		AjaxManager.eseguiAjaxRequest(barberGestoreEventi.DEFAULT_METHOD, 
-										url, barberGestoreEventi.ASYNC_TYPE, 
-										null, responseFunction);
+						url, barberGestoreEventi.ASYNC_TYPE, 
+						null, responseFunction);
 	}
 
 barberGestoreEventi.onAjaxResponse = 
