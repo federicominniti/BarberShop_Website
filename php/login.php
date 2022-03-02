@@ -1,7 +1,7 @@
 <?php
 	require_once __DIR__ . "/config.php";
-    require_once DIR_UTIL . "barbershopDbManager.php";
-    require_once DIR_UTIL . "sessionUtil.php";
+    	require_once DIR_UTIL . "barbershopDbManager.php";
+    	require_once DIR_UTIL . "sessionUtil.php";
 
 	$nomeUtente = $_POST['nomeUtente'];
 	$password = $_POST['password'];
@@ -37,9 +37,9 @@
 		$password = $barbershop_db->sqlInjectionFilter($password);
 
 		$query = "SELECT * "
-					. "FROM utente "
-					. "WHERE NomeUtente='" . $nomeUtente . "' AND Password='" . md5($password) . "' "
-					. 		"AND Attivo = 1;";
+				. "FROM utente "
+				. "WHERE NomeUtente='" . $nomeUtente . "' AND Password='" . md5($password) . "' "
+				. "AND Attivo = 1;";
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$ris = mysqli_num_rows($resultSet);
@@ -49,9 +49,9 @@
 		}
 		
 		$query = "SELECT * "
-					. "FROM barber "
-					. "WHERE NomeUBarber='" . $nomeUtente . "' AND password='" . md5($password) . "' "
-					. 		"AND Attivo = 1;";
+				. "FROM barber "
+				. "WHERE NomeUBarber='" . $nomeUtente . "' AND password='" . md5($password) . "' "
+				. "AND Attivo = 1;";
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$ris = mysqli_num_rows($resultSet);
