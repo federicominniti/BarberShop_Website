@@ -6,9 +6,9 @@
 		public $tipoRicerca; //-1 campo non usato
 		
 		function AjaxRisposta($codiceRisposta = 1, 
-								$messaggio = "Riprova piu' tardi",
-								$dati = null,
-								$tipoRicerca = -1){
+					$messaggio = "Riprova piu' tardi",
+					$dati = null,
+					$tipoRicerca = -1){
 			$this->codiceRisposta = $codiceRisposta;
 			$this->messaggio = $messaggio;
 			$this->dati = null;
@@ -26,7 +26,7 @@
 		public $dataAppuntamento;
 		public $oraAppuntamento;
 		function Appuntamento($codiceAppuntamento = null, $nomeUtente = null, $nomeServizio = null, 
-								$dataAppuntamento = null, $oraAppuntamento = null, $servizio = null){
+					$dataAppuntamento = null, $oraAppuntamento = null, $servizio = null){
 			$this->nomeUtente = $nomeUtente;
 			$this->nomeServizio = $nomeServizio;
 			$this->codiceAppuntamento = $codiceAppuntamento;
@@ -74,7 +74,7 @@
 		public $attivo;
 	
 		function Utente($nome = null, $cognome = null, $dataDiNascita = null, $nomeUtente = null,
-							$email = null, $immagineProfilo = null, $attivo = null){
+				$email = null, $immagineProfilo = null, $attivo = null){
 			$this->nome = $nome;
 			$this->cognome = $cognome;
 			$this->dataDiNascita = $dataDiNascita;
@@ -94,7 +94,7 @@
 		public $dataRichiesta;
 		
 		function Ferie($codiceRichiesta = null, $nomeUBarber = null, $data1 = null, $data2 = null, 
-							$dataRichiesta = null){
+				$dataRichiesta = null){
 			$this->codiceRichiesta = $codiceRichiesta;
 			$this->nomeUBarber = $nomeUBarber;
 			$this->data1 = $data1;
