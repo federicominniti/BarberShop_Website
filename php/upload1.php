@@ -53,8 +53,8 @@
 	if($uploadOk == 1){
 		echo md5($_POST["password_reg"]);
 		$risultato = creaUtente($_POST["nome_reg"], $_POST["cognome_reg"], $_POST["data_nascita_reg"],
-									$_POST["nome_utente_reg"], $_POST["email_reg"], md5($_POST["password_reg"]), 
-									$_FILES["file_da_caricare"]["name"]);
+					$_POST["nome_utente_reg"], $_POST["email_reg"], md5($_POST["password_reg"]), 
+					$_FILES["file_da_caricare"]["name"]);
 	}
 
 	if($uploadOk == 0){
