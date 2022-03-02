@@ -22,8 +22,8 @@ CaricatoreAdmin.CaricaDashboardAmministrazione =
 		var url = CaricatoreAdmin.URL_OPERAZIONI_ADMIN + queryString;
 		var funzioneRisposta = CaricatoreAdmin.onAjaxResponseDashboard;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAdmin.DEFAUL_METHOD, 
-										url, CaricatoreAdmin.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAdmin.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}	
 
 //Abilitazione/disabilitazione account utente e/o barber
@@ -41,8 +41,8 @@ CaricatoreAdmin.CambiaStatoAccount =
 		}
 		var url = CaricatoreAdmin.URL_OPERAZIONI_ADMIN + queryString;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAdmin.DEFAUL_METHOD, 
-										url, CaricatoreAdmin.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAdmin.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 	
 //Creazione utente barber
@@ -56,13 +56,13 @@ CaricatoreAdmin.CreaBarber =
 		}
 
 		var queryString = "?tipoOperazione=" + CaricatoreAdmin.CREA_BARBER + 
-							"&cognome=" + inserimenti[0].value + "&nome="  + inserimenti[1].value + 
-							"&nomeUBarber=" + inserimenti[2].value + "&password=" + inserimenti[3].value;
+			"&cognome=" + inserimenti[0].value + "&nome="  + inserimenti[1].value + 
+			"&nomeUBarber=" + inserimenti[2].value + "&password=" + inserimenti[3].value;
 		var url = CaricatoreAdmin.URL_OPERAZIONI_ADMIN + queryString;
 		var funzioneRisposta = CaricatoreAdmin.onAjaxResponseRefreshPersonale;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAdmin.DEFAUL_METHOD, 
-										url, CaricatoreAdmin.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAdmin.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 //Richiesta caricamento delle ferie richieste dai barber
@@ -76,8 +76,8 @@ CaricatoreAdmin.CaricaRichiesteFerie =
 		var url = CaricatoreAdmin.URL_OPERAZIONI_ADMIN + queryString;
 		var funzioneRisposta = CaricatoreAdmin.onAjaxResponseCaricaRichiesteFerie;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAdmin.DEFAUL_METHOD, 
-										url, CaricatoreAdmin.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAdmin.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 //Richiesta caricamento delle ferie gia accettate in precedenza
@@ -91,8 +91,8 @@ CaricatoreAdmin.CaricaFerieAccettate =
 		var url = CaricatoreAdmin.URL_OPERAZIONI_ADMIN + queryString;
 		var funzioneRisposta = CaricatoreAdmin.onAjaxResponseCaricaFerieAccettate;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAdmin.DEFAUL_METHOD, 
-										url, CaricatoreAdmin.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAdmin.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 //Accetta/rifiuta della richiesta da parte di un barber delle ferie
@@ -103,8 +103,8 @@ CaricatoreAdmin.CambiaStatoRichiesta =
 		var url = CaricatoreAdmin.URL_OPERAZIONI_ADMIN + queryString;
 		var funzioneRisposta = CaricatoreAdmin.onAjaxResponseCaricaRichiesteFerie;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAdmin.DEFAUL_METHOD, 
-										url, CaricatoreAdmin.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAdmin.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 CaricatoreAdmin.onAjaxResponseDashboard =
