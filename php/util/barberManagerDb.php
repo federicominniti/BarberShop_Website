@@ -10,13 +10,13 @@
  		$offset = $barbershop_db->sqlInjectionFilter($offset);
 		$appDaCaricare = $barbershop_db->sqlInjectionFilter($appDaCaricare);
 		$query = 'SELECT a.NomeUtente, a.CodiceAppuntamento, s.Nome, a.DataAppuntamento, a.OraAppuntamento '
-					. 'FROM  Appuntamento a INNER JOIN Servizio s ON 
-														a.NumeroServizio = s.NumeroServizio
-											INNER JOIN Barber b ON 
-														a.NomeUBarber = b.NomeUBarber '
-					. 'WHERE a.NomeUBarber = \'' . $nomeUBarber . '\' AND Fatto = ' . $fatto . ' '
-					. 'ORDER BY a.DataAppuntamento ASC '
-					. 'LIMIT ' . $offset . ',' . $appDaCaricare ;
+				. 'FROM  Appuntamento a INNER JOIN Servizio s ON 
+					a.NumeroServizio = s.NumeroServizio
+					INNER JOIN Barber b ON 
+					a.NomeUBarber = b.NomeUBarber '
+				. 'WHERE a.NomeUBarber = \'' . $nomeUBarber . '\' AND Fatto = ' . $fatto . ' '
+				. 'ORDER BY a.DataAppuntamento ASC '
+				. 'LIMIT ' . $offset . ',' . $appDaCaricare ;
  		
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -27,8 +27,8 @@
 		global $barbershop_db;
 		$codiceAppuntamento = $barbershop_db->sqlInjectionFilter($codiceAppuntamento);
     	$query = 'UPDATE Appuntamento '
-					. 'SET Fatto=1 '
-					. 'WHERE CodiceAppuntamento=' . $codiceAppuntamento;
+			. 'SET Fatto=1 '
+			. 'WHERE CodiceAppuntamento=' . $codiceAppuntamento;
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -38,8 +38,8 @@
     	global $barbershop_db;
 		$codiceAppuntamento = $barbershop_db->sqlInjectionFilter($codiceAppuntamento);
     	$query = 'SELECT * '
-    				. 'FROM Appuntamento ' 
-    				. 'WHERE CodiceAppuntamento=' . $codiceAppuntamento;
+    			. 'FROM Appuntamento ' 
+    			. 'WHERE CodiceAppuntamento=' . $codiceAppuntamento;
     	$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -48,7 +48,7 @@
     function getServizi(){
     	global $barbershop_db;
 		$query = 'SELECT Nome AS dato '
-					. 'FROM servizio';
+				. 'FROM servizio';
  
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -58,9 +58,9 @@
     function getBarbers(){
     	global $barbershop_db;
 		$query = 'SELECT Nome AS dato '
-					. 'FROM barber '
-					. 'WHERE Attivo = 1 '
-					. 'ORDER BY NomeUBarber';
+				. 'FROM barber '
+				. 'WHERE Attivo = 1 '
+				. 'ORDER BY NomeUBarber';
  		
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -71,9 +71,9 @@
     	global $barbershop_db;
     	$nome = $barbershop_db->sqlInjectionFilter($nome);
 		$query = 'SELECT NomeUBarber '
-					. 'FROM barber '
-					. 'WHERE Nome = \'' . $nome . '\' ' 
-					. 'ORDER BY NomeUBarber';
+				. 'FROM barber '
+				. 'WHERE Nome = \'' . $nome . '\' ' 
+				. 'ORDER BY NomeUBarber';
  		
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -84,8 +84,8 @@
     	global $barbershop_db;
     	$nome = $barbershop_db->sqlInjectionFilter($nome);
 		$query = 'SELECT NumeroServizio '
-					. 'FROM servizio '
-					. 'WHERE Nome = \'' . $nome . '\';';
+				. 'FROM servizio '
+				. 'WHERE Nome = \'' . $nome . '\';';
  		
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -97,10 +97,10 @@
 		$nomeUBarber = $barbershop_db->sqlInjectionFilter($nomeUBarber);
  		$dataAppuntamento = $barbershop_db->sqlInjectionFilter($dataAppuntamento);
 		$query = 'SELECT OraAppuntamento AS dato '
-					. 'FROM appuntamento '
-					. 'WHERE NomeUBarber = \'' . $nomeUBarber . '\' AND ' 
-					.			'DataAppuntamento = \'' . $dataAppuntamento . '\' AND '
-					.			' Fatto = 0 AND DataAppuntamento >= CURRENT_DATE';
+				. 'FROM appuntamento '
+				. 'WHERE NomeUBarber = \'' . $nomeUBarber . '\' AND ' 
+				. 'DataAppuntamento = \'' . $dataAppuntamento . '\' AND '
+				. ' Fatto = 0 AND DataAppuntamento >= CURRENT_DATE';
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet; 
@@ -112,15 +112,15 @@
  		$offset = $barbershop_db->sqlInjectionFilter($offset);
 		$appDaCaricare = $barbershop_db->sqlInjectionFilter($appDaCaricare);
 		$query = 'SELECT b.Nome as NomeUtente, s.Nome, a.DataAppuntamento, a.OraAppuntamento, a.CodiceAppuntamento '
-					. 'FROM  appuntamento a INNER JOIN servizio s ON 
-														a.NumeroServizio = s.NumeroServizio
-											INNER JOIN utente u ON 
-														a.NomeUtente = u.NomeUtente 
-											INNER JOIN barber b ON 
-														a.NomeUBarber = b.NomeUBarber '
-					. 'WHERE u.NomeUtente = \'' . $nomeUtente . '\' AND Fatto = ' . $fatto . ' '
-					. 'ORDER BY a.DataAppuntamento ASC '
-					. 'LIMIT ' . $offset . ',' . $appDaCaricare ;
+				. 'FROM  appuntamento a INNER JOIN servizio s ON 
+					a.NumeroServizio = s.NumeroServizio
+					INNER JOIN utente u ON 
+					a.NomeUtente = u.NomeUtente 
+					INNER JOIN barber b ON 
+					a.NomeUBarber = b.NomeUBarber '
+				. 'WHERE u.NomeUtente = \'' . $nomeUtente . '\' AND Fatto = ' . $fatto . ' '
+				. 'ORDER BY a.DataAppuntamento ASC '
+				. 'LIMIT ' . $offset . ',' . $appDaCaricare ;
  		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -130,7 +130,7 @@
 		global $barbershop_db;
 		$codiceAppuntamento = $barbershop_db->sqlInjectionFilter($codiceAppuntamento);
     	$query = 'DELETE FROM appuntamento '
-    				. 'WHERE CodiceAppuntamento=' . $codiceAppuntamento;
+    			. 'WHERE CodiceAppuntamento=' . $codiceAppuntamento;
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -143,9 +143,9 @@
 		$data = $barbershop_db->sqlInjectionFilter($data);
 		$orario = $barbershop_db->sqlInjectionFilter($orario);
     	$query = 'SELECT * '
-    				. 'FROM ferie '
-    				. 'WHERE NomeUBarber=\'' . $barber . '\' '
-    				. 'AND Data1 <= \'' . $data . '\' AND Data2 >= \'' . $data . '\';';
+    			. 'FROM ferie '
+    			. 'WHERE NomeUBarber=\'' . $barber . '\' '
+    			. 'AND Data1 <= \'' . $data . '\' AND Data2 >= \'' . $data . '\';';
     				
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -156,8 +156,8 @@
     	global $barbershop_db;
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'SELECT * '
-    				. 'FROM utente '
-    				. 'WHERE NomeUtente=\'' . $nomeUtente . '\''; 
+    			. 'FROM utente '
+    			. 'WHERE NomeUtente=\'' . $nomeUtente . '\''; 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -171,7 +171,7 @@
 		$servizio = $barbershop_db->sqlInjectionFilter($servizio);
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'INSERT INTO appuntamento (NomeUtente, NumeroServizio, NomeUBarber, DataAppuntamento, OraAppuntamento) ' 
-						. 'VALUES (\'' . $nomeUtente . '\', \'' . $servizio . '\', \'' . $barber . '\', \'' . $data . '\', \'' . $orario . '\');';
+			. 'VALUES (\'' . $nomeUtente . '\', \'' . $servizio . '\', \'' . $barber . '\', \'' . $data . '\', \'' . $orario . '\');';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -188,9 +188,9 @@
 		$password = $barbershop_db->sqlInjectionFilter($password);
 		$fileName = $barbershop_db->sqlInjectionFilter($fileName);
     	$query = 'INSERT INTO utente (Nome, Cognome, DataDiNascita, NomeUtente, Email, Password, ImmagineProfilo) ' 
-					. 'VALUES (\'' . $nome . '\', \'' . $cognome . '\', \'' . $dataNascita . '\', \'' 
-								. $nomeUtente . '\', \'' . $email . '\', \'' . $password . '\', \'' 
-								. $fileName . '\');';
+			. 'VALUES (\'' . $nome . '\', \'' . $cognome . '\', \'' . $dataNascita . '\', \'' 
+				. $nomeUtente . '\', \'' . $email . '\', \'' . $password . '\', \'' 
+				. $fileName . '\');';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -201,8 +201,8 @@
 		global $barbershop_db;
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'SELECT * '
-    				. 'FROM utente '
-    				. 'WHERE NomeUtente=\'' . $nomeUtente . '\''; 
+    			. 'FROM utente '
+    			. 'WHERE NomeUtente=\'' . $nomeUtente . '\''; 
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -213,10 +213,10 @@
 		global $barbershop_db;
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'SELECT NumeroServizio, COUNT(*) as numeroAppuntamenti '
-    				. 'FROM appuntamento '
-    				. 'WHERE NomeUtente=\'' . $nomeUtente . '\' '
-    				. 'GROUP BY NumeroServizio '
-    				. 'ORDER BY NumeroServizio'; 
+    			. 'FROM appuntamento '
+    			. 'WHERE NomeUtente=\'' . $nomeUtente . '\' '
+    			. 'GROUP BY NumeroServizio '
+    			. 'ORDER BY NumeroServizio'; 
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -228,8 +228,8 @@
 		$nuova = $barbershop_db->sqlInjectionFilter($nuova);
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'UPDATE utente '
-					. 'SET Password= \'' . $nuova . '\' '
-					. 'WHERE NomeUtente=\'' . $nomeUtente . '\'';
+			. 'SET Password= \'' . $nuova . '\' '
+			. 'WHERE NomeUtente=\'' . $nomeUtente . '\'';
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -239,8 +239,8 @@
 		global $barbershop_db;
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'SELECT Password '
-    				. 'FROM utente '
-    				. 'WHERE NomeUtente=\'' . $nomeUtente . '\''; 
+    			. 'FROM utente '
+    			. 'WHERE NomeUtente=\'' . $nomeUtente . '\''; 
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -250,7 +250,7 @@
 	function getPersonale(){
 		global $barbershop_db;
     	$query = 'SELECT Cognome, Nome, NomeUBarber, Password, Attivo '
-    				. 'FROM barber;';
+    			. 'FROM barber;';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -262,8 +262,8 @@
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
 		$attivo = $barbershop_db->sqlInjectionFilter($attivo);
     	$query = 'UPDATE barber '
-					. 'SET Attivo= \'' . $attivo . '\' '
-					. 'WHERE NomeUBarber=\'' . $nomeUtente . '\'';
+			. 'SET Attivo= \'' . $attivo . '\' '
+			. 'WHERE NomeUBarber=\'' . $nomeUtente . '\'';
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -274,8 +274,8 @@
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
 		$attivo = $barbershop_db->sqlInjectionFilter($attivo);
     	$query = 'UPDATE utente '
-					. 'SET Attivo= \'' . $attivo . '\' '
-					. 'WHERE NomeUtente=\'' . $nomeUtente . '\'';
+			. 'SET Attivo= \'' . $attivo . '\' '
+			. 'WHERE NomeUtente=\'' . $nomeUtente . '\'';
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -288,8 +288,8 @@
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
 		$password = $barbershop_db->sqlInjectionFilter($password);
     	$query = 'INSERT INTO barber (Cognome, Nome, NomeUBarber, Password) ' 
-					. 'VALUES (\'' . $cognome . '\', \'' . $nome . '\', \'' . $nomeUtente . '\', \'' 
-								. md5($password) . '\');';
+			. 'VALUES (\'' . $cognome . '\', \'' . $nome . '\', \'' . $nomeUtente . '\', \'' 
+				. md5($password) . '\');';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -299,7 +299,7 @@
     function getUtenti(){
     	global $barbershop_db;
     	$query = 'SELECT Nome, Cognome, NomeUtente, Email, Attivo '
-    				. 'FROM utente;';
+    			. 'FROM utente;';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -311,10 +311,10 @@
     	$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$stato = $barbershop_db->sqlInjectionFilter($stato);
     	$query = 'SELECT CodiceRichiesta, Data1, Data2, DataRichiesta '
-    				. 'FROM ferie '
-    				. 'WHERE Stato = \'' . $stato . '\' AND NomeUBarber = \'' . $nomeUtente . '\' '
-    				. 'AND Data1 BETWEEN \'' . date("Y") . '-01-01\' AND \'' . date("Y") . '-12-31\' '
-    				. 'ORDER BY DataRichiesta DESC;';
+    			. 'FROM ferie '
+    			. 'WHERE Stato = \'' . $stato . '\' AND NomeUBarber = \'' . $nomeUtente . '\' '
+    			. 'AND Data1 BETWEEN \'' . date("Y") . '-01-01\' AND \'' . date("Y") . '-12-31\' '
+    			. 'ORDER BY DataRichiesta DESC;';
     				
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -325,8 +325,8 @@
     	global $barbershop_db;
     	$codiceRichiesta = $barbershop_db->sqlInjectionFilter($codiceRichiesta);
     	$query = 'SELECT NomeUBarber '
-    				. 'FROM ferie '
-    				. 'WHERE CodiceRichiesta = \'' . $codiceRichiesta . '\';';
+    			. 'FROM ferie '
+    			. 'WHERE CodiceRichiesta = \'' . $codiceRichiesta . '\';';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -338,7 +338,7 @@
 		global $barbershop_db;
 		$codiceRichiesta = $barbershop_db->sqlInjectionFilter($codiceRichiesta);
     	$query = 'DELETE FROM ferie '
-    				. 'WHERE CodiceRichiesta=' . $codiceRichiesta . ' AND Stato=\'pending\'';
+    			. 'WHERE CodiceRichiesta=' . $codiceRichiesta . ' AND Stato=\'pending\'';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -351,10 +351,10 @@
 		$data1 = $barbershop_db->sqlInjectionFilter($data1);
 		$data2 = $barbershop_db->sqlInjectionFilter($data2);
     	$query = 'SELECT CodiceRichiesta '
-    				. 'FROM ferie '
-    				. 'WHERE NomeUBarber = \'' . $nomeUtente . '\' '
-    				. 'AND (Data1 BETWEEN \'' . $data1 . '\' AND \'' . $data2 . '\' '
-    				. 		'OR Data2 BETWEEN \'' . $data1 . '\' AND \'' . $data2 . '\');';
+    			. 'FROM ferie '
+    			. 'WHERE NomeUBarber = \'' . $nomeUtente . '\' '
+    			. 'AND (Data1 BETWEEN \'' . $data1 . '\' AND \'' . $data2 . '\' '
+    			. 'OR Data2 BETWEEN \'' . $data1 . '\' AND \'' . $data2 . '\');';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -367,7 +367,7 @@
 		$data1 = $barbershop_db->sqlInjectionFilter($data1);
 		$data2 = $barbershop_db->sqlInjectionFilter($data2);
     	$query = 'INSERT INTO ferie (NomeUBarber, Data1, Data2, DataRichiesta) ' 
-						. 'VALUES (\'' . $nomeUtente . '\', \'' . $data1 . '\', \'' . $data2 . '\', \'' . date("Y-m-d") . '\');';
+			. 'VALUES (\'' . $nomeUtente . '\', \'' . $data1 . '\', \'' . $data2 . '\', \'' . date("Y-m-d") . '\');';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -377,9 +377,9 @@
 	function getFeriePending(){
 		global $barbershop_db;
     	$query = 'SELECT CodiceRichiesta, NomeUBarber, Data1, Data2, DataRichiesta '
-    				. 'FROM ferie '
-    				. 'WHERE Stato = \'pending\' '
-    				. 'ORDER BY DataRichiesta;';
+    			. 'FROM ferie '
+    			. 'WHERE Stato = \'pending\' '
+    			. 'ORDER BY DataRichiesta;';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -389,10 +389,10 @@
 	function getFerieAccettate(){
 		global $barbershop_db;
     	$query = 'SELECT CodiceRichiesta, NomeUBarber, Data1, Data2, DataRichiesta '
-    				. 'FROM ferie '
-    				. 'WHERE Stato = \'accettate\' '
-    				. 'AND Data1 BETWEEN \'' . date("Y") . '-01-01\' AND \'' . date("Y") . '-12-31\' '
-    				. 'ORDER BY DataRichiesta;';
+    			. 'FROM ferie '
+    			. 'WHERE Stato = \'accettate\' '
+    			. 'AND Data1 BETWEEN \'' . date("Y") . '-01-01\' AND \'' . date("Y") . '-12-31\' '
+    			. 'ORDER BY DataRichiesta;';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
@@ -404,8 +404,8 @@
 		$codiceRichiesta = $barbershop_db->sqlInjectionFilter($codiceRichiesta);
 		$a_r = $barbershop_db->sqlInjectionFilter($a_r);
     	$query = 'UPDATE ferie '
-					. 'SET Stato= \'' . $a_r . '\' '
-					. 'WHERE CodiceRichiesta=\'' . $codiceRichiesta . '\';';
+			. 'SET Stato= \'' . $a_r . '\' '
+			. 'WHERE CodiceRichiesta=\'' . $codiceRichiesta . '\';';
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
@@ -415,11 +415,11 @@
 		global $barbershop_db;
 		$nomeUtente = $barbershop_db->sqlInjectionFilter($nomeUtente);
     	$query = 'SELECT Data1, Data2 '
-    				. 'FROM ferie '
-    				. 'WHERE Stato = \'accettate\' '
-    				. 'AND Data1 BETWEEN \'' . date("Y-m") . '-01\' AND SUBDATE(\'' . date("Y") . '-' . (date("m") + 1) . '-01\', INTERVAL 1 DAY) '
-    				. 'AND NomeUBarber = \'' . $nomeUtente . '\' '
-    				. 'ORDER BY Data1;';
+    			. 'FROM ferie '
+    			. 'WHERE Stato = \'accettate\' '
+    			. 'AND Data1 BETWEEN \'' . date("Y-m") . '-01\' AND SUBDATE(\'' . date("Y") . '-' . (date("m") + 1) . '-01\', INTERVAL 1 DAY) '
+    			. 'AND NomeUBarber = \'' . $nomeUtente . '\' '
+    			. 'ORDER BY Data1;';
 
 		$resultSet = $barbershop_db->queryExe($query);
 		$barbershop_db->chiudiConnessione();
