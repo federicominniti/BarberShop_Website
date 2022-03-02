@@ -14,8 +14,8 @@ All users can also modify their credentials.
 
 The website is in Italian
 
-## Goal
-Create a website from scratch using HTML5, CSS3, Javascript, PHP and AJAX.
+## Goal is:
+To create a website from scratch using HTML5, CSS3, Javascript, PHP and AJAX.
 
 ## Preview
 ![Alt Text](site_usage.gif)
