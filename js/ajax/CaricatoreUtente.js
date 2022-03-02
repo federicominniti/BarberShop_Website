@@ -16,8 +16,8 @@ CaricatoreUtente.CaricaDati =
 		var url = CaricatoreUtente.URL_FORM;
 		var funzioneRisposta = CaricatoreUtente.onAjaxResponseDati;
 		AjaxManager.eseguiAjaxRequest(CaricatoreUtente.DEFAUL_METHOD, 
-										url, CaricatoreUtente.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreUtente.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 //Caricamento dati del profilo dell'utente cliente
@@ -26,8 +26,8 @@ CaricatoreUtente.CaricaProfilo =
 		var url = CaricatoreUtente.URL_PAGINA_UTENTE;
 		var funzioneRisposta = CaricatoreUtente.onAjaxResponseProfilo;
 		AjaxManager.eseguiAjaxRequest(CaricatoreUtente.DEFAUL_METHOD, 
-										url, CaricatoreUtente.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreUtente.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 //Richiesta di ferie da parte di un utente barber
@@ -36,8 +36,8 @@ CaricatoreUtente.SegnaFerieCalendario =
 		var url = CaricatoreUtente.URL_CALENDARIO + "?nomeUtente=" + nomeUtente;
 		var funzioneRisposta = CaricatoreUtente.onAjaxResponseCalendario;
 		AjaxManager.eseguiAjaxRequest(CaricatoreUtente.DEFAUL_METHOD, 
-										url, CaricatoreUtente.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreUtente.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 	
 CaricatoreUtente.onAjaxResponseDati = 
