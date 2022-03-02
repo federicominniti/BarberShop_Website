@@ -31,8 +31,8 @@ utenteGestoreEventi.onChange =
 			var responseFunction = utenteGestoreEventi.onAjaxResponseChange;
 		
 			AjaxManager.eseguiAjaxRequest(utenteGestoreEventi.DEFAULT_METHOD, 
-											url, utenteGestoreEventi.ASYNC_TYPE, 
-											null, responseFunction);
+							url, utenteGestoreEventi.ASYNC_TYPE, 
+							null, responseFunction);
 		}
 	}
 
@@ -44,8 +44,8 @@ utenteGestoreEventi.annulla =
 		var responseFunction = utenteGestoreEventi.onAjaxResponseGestione;
 	
 		AjaxManager.eseguiAjaxRequest(utenteGestoreEventi.DEFAULT_METHOD, 
-										url, utenteGestoreEventi.ASYNC_TYPE, 
-										null, responseFunction);
+						url, utenteGestoreEventi.ASYNC_TYPE, 
+						null, responseFunction);
 	}
 
 //Visualizzazione alert contenente il riepilogo dell'appuntamento che l'utente cliente sta cercando di 
@@ -60,7 +60,7 @@ utenteGestoreEventi.riepilogoAppuntamento =
 		}
 
 		DashboardUtente.creaPopupConferma(inserimenti[0].value, inserimenti[1].value,
-											inserimenti[2].value, inserimenti[3].value);
+							inserimenti[2].value, inserimenti[3].value);
 
 		DashboardUtente.pulisciSelezioni();
 	}
@@ -69,13 +69,13 @@ utenteGestoreEventi.riepilogoAppuntamento =
 utenteGestoreEventi.prenotaAppuntamento =
 	function(data, barber, orario, servizio){
 		var queryString = "?data=" + data + "&barber=" + barber + "&orario=" + orario +
-							"&servizio=" + servizio + "&evento=" + utenteGestoreEventi.PRENOTA;
+					"&servizio=" + servizio + "&evento=" + utenteGestoreEventi.PRENOTA;
 		var url = utenteGestoreEventi.URL_GESTIONE + queryString;
 		var responseFunction = utenteGestoreEventi.onAjaxResponseGestione;
 	
 		AjaxManager.eseguiAjaxRequest(utenteGestoreEventi.DEFAULT_METHOD, 
-										url, utenteGestoreEventi.ASYNC_TYPE, 
-										null, responseFunction);
+						url, utenteGestoreEventi.ASYNC_TYPE, 
+						null, responseFunction);
 	}
 
 //Verifica se il nome utente scelto in fase di registrazione e' univoco o se gia' esiste un utente 
@@ -89,8 +89,8 @@ utenteGestoreEventi.controllaSeGiaEsistente =
 			var responseFunction = utenteGestoreEventi.onAjaxResponseRicercaNomeUtente;
 
 			AjaxManager.eseguiAjaxRequest(utenteGestoreEventi.DEFAULT_METHOD, 
-											url, utenteGestoreEventi.ASYNC_TYPE, 
-											null, responseFunction);
+							url, utenteGestoreEventi.ASYNC_TYPE, 
+							null, responseFunction);
 		}
 	}
 
@@ -109,8 +109,8 @@ utenteGestoreEventi.cambiaPassword =
 			var responseFunction = utenteGestoreEventi.onAjaxResponseCambioPassword;
 
 			AjaxManager.eseguiAjaxRequest(utenteGestoreEventi.DEFAULT_METHOD, 
-											url, utenteGestoreEventi.ASYNC_TYPE, 
-											null, responseFunction);
+							url, utenteGestoreEventi.ASYNC_TYPE, 
+							null, responseFunction);
 		}
 		else{
 			if(vecchia.value == "")
@@ -128,13 +128,13 @@ utenteGestoreEventi.verificaVecchiaPassword =
 	function(vecchia, nomeUtente){
 		if(vecchia !==''){
 			var queryString = "?vecchia=" + vecchia + "&nomeUtente=" + nomeUtente
-								+ "&evento=" + utenteGestoreEventi.VECCHIA_PASSWORD;
+						+ "&evento=" + utenteGestoreEventi.VECCHIA_PASSWORD;
 			var url = utenteGestoreEventi.URL_GESTIONE + queryString;
 			var responseFunction = utenteGestoreEventi.onAjaxResponseVecchiaPassword;
 
 			AjaxManager.eseguiAjaxRequest(utenteGestoreEventi.DEFAULT_METHOD, 
-											url, utenteGestoreEventi.ASYNC_TYPE, 
-											null, responseFunction);
+							url, utenteGestoreEventi.ASYNC_TYPE, 
+							null, responseFunction);
 		}else
 			setStile("password_vecchia", false);
 	}
