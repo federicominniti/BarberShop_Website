@@ -425,3 +425,4 @@
 		$barbershop_db->chiudiConnessione();
 		return $resultSet;
 	}
+?>
