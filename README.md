@@ -12,9 +12,10 @@ Admin can do all operation of a common barber but also create new barber's accou
 
 All users can also modify their credentials.
 
-Barbershop website is created from scratch created using HTML5, CSS3, Javascript, PHP & AJAX.
-
 The website is in Italian
+
+## Goal
+Create a website from scratch using HTML5, CSS3, Javascript, PHP and AJAX.
 
 ## Preview
 ![Alt Text](site_usage.gif)
