@@ -22,14 +22,14 @@ CaricatoreAppuntamenti.inizializza =
 CaricatoreAppuntamenti.CaricaDati =
 	function(tipoRicerca){
 		var queryString = "?tipoRicerca=" + tipoRicerca + "&appDaCaricareF=" + CaricatoreAppuntamenti.APP_DA_CARICARE[1]
-							+ "&offsetF=" + (CaricatoreAppuntamenti.CURRENT_PAGE_INDEX[1] - 1) * CaricatoreAppuntamenti.APP_DA_CARICARE[1]
-							+ "&appDaCaricareNF=" + CaricatoreAppuntamenti.APP_DA_CARICARE[0] 
-							+ "&offsetNF=" + (CaricatoreAppuntamenti.CURRENT_PAGE_INDEX[0] - 1) * CaricatoreAppuntamenti.APP_DA_CARICARE[0];
+					+ "&offsetF=" + (CaricatoreAppuntamenti.CURRENT_PAGE_INDEX[1] - 1) * CaricatoreAppuntamenti.APP_DA_CARICARE[1]
+					+ "&appDaCaricareNF=" + CaricatoreAppuntamenti.APP_DA_CARICARE[0] 
+					+ "&offsetNF=" + (CaricatoreAppuntamenti.CURRENT_PAGE_INDEX[0] - 1) * CaricatoreAppuntamenti.APP_DA_CARICARE[0];
 		var url = CaricatoreAppuntamenti.URL_REQUEST + queryString;
 		var funzioneRisposta = CaricatoreAppuntamenti.onAjaxResponse;
 		AjaxManager.eseguiAjaxRequest(CaricatoreAppuntamenti.DEFAUL_METHOD, 
-										url, CaricatoreAppuntamenti.ASYNC_TYPE, 
-										null, funzioneRisposta);
+						url, CaricatoreAppuntamenti.ASYNC_TYPE, 
+						null, funzioneRisposta);
 	}
 
 //Caricamento degli elementi successivi dopo la pressione della relativa freccia
@@ -54,8 +54,8 @@ CaricatoreAppuntamenti.onAjaxResponse =
 		var MAX = 2;
 		for(var i = 0; i < MAX; i++){
 			if(risposta[i].codiceRisposta === CaricatoreAppuntamenti.NO_MORE_DATA){
-					ListaAppuntamenti.setListaVuota(i);
-					ListaAppuntamenti.aggiornaElNavigazione(CaricatoreAppuntamenti.CURRENT_PAGE_INDEX[i], true, i);
+				ListaAppuntamenti.setListaVuota(i);
+				ListaAppuntamenti.aggiornaElNavigazione(CaricatoreAppuntamenti.CURRENT_PAGE_INDEX[i], true, i);
 			}
 			
 			if (risposta[i].codiceRisposta === CaricatoreAppuntamenti.SUCCESS_RESPONSE){
