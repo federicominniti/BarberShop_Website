@@ -14,7 +14,7 @@ All users can also modify their credentials.
 
 The website is in Italian
 
-(Repository for web design project)
+(Repository for the web design's project)
 
 ## Goal is:
 To create a website from scratch using HTML5, CSS3, Javascript, PHP and AJAX.
